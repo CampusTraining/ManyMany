@@ -59,7 +59,7 @@ class KeenActiveDataProvider extends CActiveDataProvider
      */
     public function __construct($modelClass, $config=array())
     {
-        tr('constructing!','constructing!');
+        //tr('constructing!','constructing!');
         parent::__construct($modelClass, $config);
     }
     

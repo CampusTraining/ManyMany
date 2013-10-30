@@ -50,9 +50,9 @@ return call_user_func(
 					'connectionString' => 'mysql:host=localhost;dbname=manymany',
 					'emulatePrepare' => true,
 					'username' => 'root',
-					'password' => 'root',
+					'password' => 'pass',
 					'charset' => 'utf8',
-                    'enableProfiling'=>false,
+                    'enableProfiling'=>true,
 					'enableParamLogging' => true,
 				),
 				'errorHandler' => array(
@@ -64,6 +64,12 @@ return call_user_func(
 						'file' => array(
 							'class' => 'CWebLogRoute',
 						),
+						array(
+                			'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+                			// Access is restricted by default to the localhost
+                			//'ipFilters'=>array('127.0.0.1','192.168.1.*', 88.23.23.0/24),
+                			'ipFilters'=>array('127.0.0.1'),
+            			),
 					),
 				),
 			),
